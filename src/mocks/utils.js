@@ -1,4 +1,4 @@
-import {DURATION, COMMMENTS_AMOUNT} from "./film-data";
+import {film} from "./film-data";
 
 const MINUTES_IN_HOUR = 60;
 
@@ -32,14 +32,14 @@ const getRandomArrayItem = (arr) => {
 };
 
 const getRandomDuration = () => {
-  const duration = getRandomInteger(DURATION.MIN, DURATION.MAX);
+  const duration = getRandomInteger(film.DURATION.MIN, film.DURATION.MAX);
   const hours = parseInt(duration / MINUTES_IN_HOUR, 10);
   const minutes = duration % MINUTES_IN_HOUR;
   return `${hours}h ${minutes}m`;
 };
 
 const getCommentsAmount = () => {
-  return getRandomInteger(COMMMENTS_AMOUNT.MIN, COMMMENTS_AMOUNT.MAX);
+  return getRandomInteger(film.COMMMENTS_AMOUNT.MIN, film.COMMMENTS_AMOUNT.MAX);
 };
 
 export {
