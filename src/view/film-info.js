@@ -19,15 +19,15 @@ export const createFilmInfoTemplate = (film) => {
     genre: `Genre`,
     genres: `Genres`
   };
-  const getGenreTitle = (genres) => {
-    return genres > 1 ? genreTitle.GENRES : genreTitle.GENRE;
+  const getGenreTitle = (genresValue) => {
+    return genresValue > 1 ? genreTitle.GENRES : genreTitle.GENRE;
   };
-  
-  const createGenreTemplate = (genre) => {
-    return `<span class="film-details__genre">${genre}</span>`;
+
+  const createGenreTemplate = (genreValue) => {
+    return `<span class="film-details__genre">${genreValue}</span>`;
   };
-  const createGanresTemplate = (genres) => {
-    return genres.map(createGenreTemplate).join(``);
+  const createGanresTemplate = (genresValue) => {
+    return genresValue.map(createGenreTemplate).join(``);
   };
 
   return `<div class="film-details__info-wrap">

@@ -17,12 +17,12 @@ export const createFilmCardTemplate = (film) => {
   const buttonActiveClass = `film-card__controls-item--active`;
 
   const MAX_DESCRIPTION_LENGTH = 140;
-  
-  const cuttedDescription = (description) => {
-    if (description.length > MAX_DESCRIPTION_LENGTH) {
-      return `${description.slice(0, MAX_DESCRIPTION_LENGTH - 1)}...`
+
+  const cuttedDescription = (array) => {
+    if (array.length > MAX_DESCRIPTION_LENGTH) {
+      return `${array.slice(0, MAX_DESCRIPTION_LENGTH - 1)}...`;
     }
-    return description;
+    return array;
   };
 
   return `<article class="film-card">

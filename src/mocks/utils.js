@@ -1,4 +1,4 @@
-import {DURATION, COMMMENTS_AMOUNT} from "./film-data";
+import {DURATION} from "./film-data";
 
 const MINUTES_IN_HOUR = 60;
 

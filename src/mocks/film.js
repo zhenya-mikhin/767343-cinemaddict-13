@@ -38,7 +38,6 @@ export const generateFilm = () => {
     director: getRandomArrayItem(Directors),
     writer: getRandomArrayItem(Writers),
     cast: getRandomArray(Actors),
-    country: getRandomArrayItem(Countries),
     ageLimit: getRandomArrayItem(AgeLimits),
     isWatchlist: Boolean(getRandomInteger),
     isWatched: Boolean(getRandomInteger),

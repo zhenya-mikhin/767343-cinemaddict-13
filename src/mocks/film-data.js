@@ -68,7 +68,7 @@ const Genres = [
   `War`,
   `Arthouse`
 ];
-  
+
 const Countries = [
   `Australia`,
   `Belgium`,
