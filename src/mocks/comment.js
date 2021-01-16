@@ -1,7 +1,6 @@
-import film from "./film-data.js";
+import {Descriptions} from "./film-data.js";
 import {
-  getRandomArrayItem,
-  getCommentsAmount
+  getRandomArrayItem
 } from "./utils.js";
 
 const CommentAutors = [
@@ -19,15 +18,15 @@ const Emoji = [`smile`, `sleeping`, `puke`, `angry`];
 
 const generateComment = () => {
   return {
-    text: getRandomArrayItem(film.Descriptions),
-    emoji: `./images/emoji/${getRandomArrayItem(Emoji)}.png`,
+    text: getRandomArrayItem(Descriptions),
+    emoji: getRandomArrayItem(Emoji),
     author: getRandomArrayItem(CommentAutors),
     data: ``
   };
 };
 
-const generateComments = () => {
-  return new Array(getCommentsAmount()).fill().map(generateComment);
+const generateComments = (count) => {
+  return new Array(count).fill().map(generateComment);
 };
 
 export {generateComments};

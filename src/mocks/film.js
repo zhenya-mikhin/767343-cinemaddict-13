@@ -3,29 +3,43 @@ import {
   getRandomArray,
   getRandomArrayItem,
   getRandomDuration,
-  getCommentsAmount
 } from "./utils.js";
 
-import film from "./film-data.js";
-import generateComments from "./comment.js";
+import {
+  Titles,
+  Posters,
+  RATING,
+  RELEASE_YEAR,
+  DURATION,
+  COMMMENTS_AMOUNT,
+  Descriptions,
+  DESCRIPTIONS_LENGTH,
+  Genres,
+  Countries,
+  Directors,
+  Writers,
+  Actors,
+  AgeLimits
+} from "./film-data.js";
+
+import {generateComments} from "./comment.js";
 
 export const generateFilm = () => {
   return {
-    title: getRandomArrayItem(film.Titles),
-    poster: getRandomArrayItem(film.Posters),
-    rating: getRandomInteger(film.RATING.MIN, film.RATING.MAX),
-    release: getRandomInteger(film.RELEASE_YEAR.MIN, film.RELEASE_YEAR.MAX),
-    duration: getRandomDuration(film.DURATION),
-    commentsAmount: getCommentsAmount(),
-    comments: generateComments(),
-    genre: getRandomArrayItem(film.Genres),
-    country: getRandomArrayItem(film.Countries),
-    description: getRandomArray(film.Descriptions, film.DESCRIPTIONS_LENGTH.MIN, film.DESCRIPTIONS_LENGTH.MAX),
-    director: getRandomArrayItem(film.Directors),
-    writer: getRandomArrayItem(film.Writers),
-    cast: getRandomArray(film.Actors),
-    country: getRandomArrayItem(film.Countries),
-    ageLimit: getRandomArrayItem(film.AgeLimits),
+    title: getRandomArrayItem(Titles),
+    poster: getRandomArrayItem(Posters),
+    rating: getRandomInteger(RATING.MIN, RATING.MAX),
+    release: getRandomInteger(RELEASE_YEAR.MIN, RELEASE_YEAR.MAX),
+    duration: getRandomDuration(DURATION),
+    comments: generateComments(getRandomInteger(COMMMENTS_AMOUNT.MIN, COMMMENTS_AMOUNT.MAX)),
+    genres: getRandomArray(Genres),
+    country: getRandomArrayItem(Countries),
+    description: getRandomArray(Descriptions, DESCRIPTIONS_LENGTH.MIN, DESCRIPTIONS_LENGTH.MAX).join(``),
+    director: getRandomArrayItem(Directors),
+    writer: getRandomArrayItem(Writers),
+    cast: getRandomArray(Actors),
+    country: getRandomArrayItem(Countries),
+    ageLimit: getRandomArrayItem(AgeLimits),
     isWatchlist: Boolean(getRandomInteger),
     isWatched: Boolean(getRandomInteger),
     isFavorites: Boolean(getRandomInteger)
