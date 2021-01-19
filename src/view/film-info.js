@@ -20,7 +20,7 @@ export const createFilmInfoTemplate = (film) => {
     genres: `Genres`
   };
   const getGenreTitle = (genresValue) => {
-    return genresValue > 1 ? genreTitle.GENRES : genreTitle.GENRE;
+    return genresValue > 1 ? genreTitle.genre : genreTitle.genres;
   };
 
   const createGenreTemplate = (genreValue) => {

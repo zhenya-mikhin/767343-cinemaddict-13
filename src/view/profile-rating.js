@@ -7,9 +7,10 @@ const RATING_TITLES = [
 
 const getRatingTitle = (value) => RATING_TITLES.find(({rating}) => value >= rating).title;
 
-export const createProfileRatingTemplate = (history) => {
+export const createProfileRatingTemplate = (films) => {
+
   return `<section class="header__profile profile">
-            <p class="profile__rating">${getRatingTitle(history)}</p>
+            <p class="profile__rating">${getRatingTitle(films)}</p>
             <img class="profile__avatar" src="images/bitmap@2x.png" alt="Avatar" width="35" height="35">
           </section>`;
 };

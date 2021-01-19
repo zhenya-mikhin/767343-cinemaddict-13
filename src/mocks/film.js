@@ -39,8 +39,8 @@ export const generateFilm = () => {
     writer: getRandomArrayItem(Writers),
     cast: getRandomArray(Actors),
     ageLimit: getRandomArrayItem(AgeLimits),
-    isWatchlist: Boolean(getRandomInteger),
-    isWatched: Boolean(getRandomInteger),
-    isFavorites: Boolean(getRandomInteger)
+    isWatchlist: Boolean(getRandomInteger()),
+    isWatched: Boolean(getRandomInteger()),
+    isFavorites: Boolean(getRandomInteger())
   };
 };

@@ -27,7 +27,7 @@ const getRandomArray = (array, minLength = 0, maxLength = 3) => {
 };
 
 const getRandomArrayItem = (array) => {
-  const randomItem = getRandomInteger(0, array.length);
+  const randomItem = getRandomInteger(0, array.length - 1);
   return array[randomItem];
 };
 
@@ -42,5 +42,5 @@ export {
   getRandomInteger,
   getRandomArray,
   getRandomArrayItem,
-  getRandomDuration,
+  getRandomDuration
 };

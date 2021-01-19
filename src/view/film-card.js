@@ -1,3 +1,5 @@
+import {getRandomArrayItem} from "../mocks/utils.js";
+
 export const createFilmCardTemplate = (film) => {
 
   const {
@@ -5,7 +7,7 @@ export const createFilmCardTemplate = (film) => {
     rating,
     release,
     duration,
-    genre,
+    genres,
     poster,
     description,
     comments,
@@ -24,6 +26,8 @@ export const createFilmCardTemplate = (film) => {
     }
     return array;
   };
+
+  const genre = getRandomArrayItem(genres);
 
   return `<article class="film-card">
             <h3 class="film-card__title">${title}</h3>
