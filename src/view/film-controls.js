@@ -37,4 +37,4 @@ export default class FilmControlsView {
   removeElement() {
     this._element = null;
   }
-};
+}

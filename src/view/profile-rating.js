@@ -37,4 +37,4 @@ export default class ProfileRatingView {
   removeElement() {
     this._element = null;
   }
-};
+}

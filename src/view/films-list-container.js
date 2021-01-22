@@ -23,4 +23,4 @@ export default class FilmsListContainer {
   removeElement() {
     this._element = null;
   }
-};
+}

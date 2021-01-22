@@ -39,4 +39,4 @@ export default class Comment {
   removeElement() {
     this._element = null;
   }
-};
+}

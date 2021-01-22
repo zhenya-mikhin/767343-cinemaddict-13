@@ -46,4 +46,4 @@ export default class NewCommentView {
   removeElement() {
     this._element = null;
   }
-};
+}

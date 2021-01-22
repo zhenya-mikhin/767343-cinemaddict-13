@@ -69,4 +69,4 @@ export default class FilmCardView {
   removeElement() {
     this._element = null;
   }
-};
+}

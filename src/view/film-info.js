@@ -111,4 +111,4 @@ export default class FilmInfoView {
   removeElement() {
     this._element = null;
   }
-};
+}

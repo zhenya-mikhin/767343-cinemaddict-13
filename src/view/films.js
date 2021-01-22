@@ -4,22 +4,22 @@ const createFilmsTemplate = () => `<section class="films"></section>`;
 
 
 export default class FilmsView {
-    constructor() {
-      this._element = null;
-    }
+  constructor() {
+    this._element = null;
+  }
   
-    getTemplate() {
-      return createFilmsTemplate();
-    }
+  getTemplate() {
+    return createFilmsTemplate();
+  }
   
-    getElement() {
-      if (!this._element) {
-        this._element = createElement(this.getTemplate());
-      }
-      return this._element;
+  getElement() {
+    if (!this._element) {
+      this._element = createElement(this.getTemplate());
     }
+    return this._element;
+  }
   
-    removeElement() {
-      this._element = null;
-    }
-  };
+  removeElement() {
+    this._element = null;
+  }
+}

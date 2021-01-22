@@ -23,4 +23,4 @@ export default class ShowMoreButtonView {
   removeElement() {
     this._element = null;
   }
-};
+}
