@@ -1,4 +1,6 @@
-export const createNewCommentTemplate = () => {
+import {createElement} from "../utils.js";
+
+const createNewCommentTemplate = () => {
 
   const CommentEmoji = [
     `smile`,
@@ -23,4 +25,25 @@ export const createNewCommentTemplate = () => {
               ${CommentEmoji.map(createEmojiItemTeplate).join(``)}
             </div>
           </div>`;
+};
+
+export default class NewCommentView {
+  constructor() {
+    this._element = null;
+  }
+
+  getTemplate() {
+    return createNewCommentTemplate();
+  }
+
+  getElement() {
+    if (!this._element) {
+      this._element = createElement(this.getTemplate());
+    }
+    return this._element;
+  }
+
+  removeElement() {
+    this._element = null;
+  }
 };

@@ -1,17 +1,16 @@
 import {createElement} from "../utils.js";
 
-const createFooterStatsTemplate = (filmsAmount) => {
-  return `<p>${filmsAmount} movies inside</p>`;
+const createFilmsListContainerTemplate = () => {
+  return `<div class="films-list__container"></div>`;
 };
 
-export default class FooterStatsView {
-  constructor(filmsAmount) {
-    this._filmsAmount = filmsAmount;
+export default class FilmsListContainer {
+  constructor() {
     this._element = null;
   }
 
   getTemplate() {
-    return createFooterStatsTemplate(this._filmsAmount);
+    return createFilmsListContainerTemplate();
   }
 
   getElement() {

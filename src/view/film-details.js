@@ -1,4 +1,6 @@
-export const createFilmDetailsTemplate = (film) => {
+import {createElement} from "../utils.js";
+
+const createFilmDetailsTemplate = (film) => {
 
   const {comments} = film;
 
@@ -18,4 +20,26 @@ export const createFilmDetailsTemplate = (film) => {
               </div>
             </form>
           </section>`;
+};
+
+export default class FilmDetailsView {
+  constructor(film) {
+    this._film = film;
+    this._element = null;
+  }
+
+  getTemplate() {
+    return createFilmDetailsTemplate(this._film);
+  }
+
+  getElement() {
+    if (!this._element) {
+      this._element = createElement(this.getTemplate());
+    }
+    return this._element;
+  }
+
+  removeElement() {
+    this._element = null;
+  }
 };

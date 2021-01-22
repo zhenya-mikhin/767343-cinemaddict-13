@@ -42,5 +42,5 @@ export {
   getRandomInteger,
   getRandomArray,
   getRandomArrayItem,
-  getRandomDuration
+  getRandomDuration,
 };

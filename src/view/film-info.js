@@ -1,4 +1,6 @@
-export const createFilmInfoTemplate = (film) => {
+import {createElement} from "../utils.js";
+
+const createFilmInfoTemplate = (film) => {
 
   const {
     title,
@@ -87,4 +89,26 @@ export const createFilmInfoTemplate = (film) => {
               </p>
             </div>
           </div>`;
+};
+
+export default class FilmInfoView {
+  constructor(film) {
+    this._film = film;
+    this._element = null;
+  }
+
+  getTemplate() {
+    return createFilmInfoTemplate(this._film);
+  }
+
+  getElement() {
+    if (!this._element) {
+      this._element = createElement(this.getTemplate());
+    }
+    return this._element;
+  }
+
+  removeElement() {
+    this._element = null;
+  }
 };
