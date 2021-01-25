@@ -1,7 +1,5 @@
 import {Descriptions} from "./film-data.js";
-import {
-  getRandomArrayItem
-} from "./utils.js";
+import {getRandomArrayItem} from "../utils/common.js";
 
 const CommentAutors = [
   `Jonh Doe`,

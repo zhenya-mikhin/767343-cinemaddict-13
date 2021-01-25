@@ -1,4 +1,4 @@
-import {createElement} from "../utils.js";
+import Abstract from "./abstract.js";
 
 const createFilterItemTemplate = (filters) => {
 
@@ -18,24 +18,24 @@ const createFilterTemplate = (filterItems) => {
           </div>`;
 };
 
-export default class FilterView {
+export default class FilterView extends Abstract {
   constructor(filters) {
+    super();
     this._filters = filters;
-    this._element = null;
+    this._filterTypeChangeHandler = this._filterTypeChangeHandler.bind(this);
   }
 
   getTemplate() {
     return createFilterTemplate(this._filters);
   }
 
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-    return this._element;
+  _filterTypeChangeHandler(evt) {
+    evt.preventDefault();
+    this._callback.filterTypeChange(evt.target.dataset.filter);
   }
 
-  removeElement() {
-    this._element = null;
+  setFilterTypeChangeHandler(callback) {
+    this._callback.filterTypeChange = callback;
+    this.getElement().addEventListener(`click`, this._filterTypeChangeHandler);
   }
 }

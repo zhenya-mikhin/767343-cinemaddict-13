@@ -1,4 +1,4 @@
-import {createElement} from "../utils.js";
+import Abstract from "./abstract.js";
 
 const createNewCommentTemplate = () => {
 
@@ -27,23 +27,8 @@ const createNewCommentTemplate = () => {
           </div>`;
 };
 
-export default class NewCommentView {
-  constructor() {
-    this._element = null;
-  }
-
+export default class NewCommentView extends Abstract {
   getTemplate() {
     return createNewCommentTemplate();
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }

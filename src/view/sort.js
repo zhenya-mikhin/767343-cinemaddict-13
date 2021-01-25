@@ -1,4 +1,4 @@
-import {createElement} from "../utils.js";
+import Abstract from "./abstract.js";
 
 const createSortTemplate = () => {
 
@@ -9,23 +9,23 @@ const createSortTemplate = () => {
           </ul>`;
 };
 
-export default class Sort {
+export default class Sort extends Abstract {
   constructor() {
-    this._element = null;
+    super();
+    this._sortTypeChangeHandler = this._sortTypeChangeHandler.bind(this);
   }
 
   getTemplate() {
     return createSortTemplate();
   }
 
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-    return this._element;
+  _sortTypeChangeHandler(evt) {
+    evt.preventDefault();
+    this._callback.sorttypeChange(evt.target.dataset.sort);
   }
 
-  removeElement() {
-    this._element = null;
+  setSortTypeChangeHandler(callback) {
+    this._callback.sorttypeChange = callback;
+    this.getElement().addEventListener(`click`, this._sortTypeChangeHandler);
   }
 }

@@ -1,4 +1,4 @@
-import {createElement} from "../utils.js";
+import Abstract from "./abstract.js";
 
 const activeInput = `checked`;
 
@@ -17,24 +17,13 @@ const createFilmControlsTemplate = (film) => {
           </section>`;
 };
 
-export default class FilmControlsView {
+export default class FilmControlsView extends Abstract {
   constructor(film) {
+    super();
     this._film = film;
-    this._element = null;
   }
 
   getTemplate() {
     return createFilmControlsTemplate(this._film);
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }

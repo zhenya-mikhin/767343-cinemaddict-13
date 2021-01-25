@@ -1,4 +1,4 @@
-import {createElement} from "../utils.js";
+import Abstract from "./abstract.js";
 
 const RATING_TITLES = [
   {rating: 21, title: `movie buff`},
@@ -17,24 +17,13 @@ const createProfileRatingTemplate = (films) => {
           </section>`;
 };
 
-export default class ProfileRatingView {
+export default class ProfileRatingView extends Abstract {
   constructor(films) {
+    super();
     this._films = films;
-    this._element = null;
   }
 
   getTemplate() {
     return createProfileRatingTemplate(this._films);
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }

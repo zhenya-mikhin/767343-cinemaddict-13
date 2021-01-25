@@ -3,7 +3,7 @@ import {
   getRandomArray,
   getRandomArrayItem,
   getRandomDuration,
-} from "./utils.js";
+} from "../utils/common.js";
 
 import {
   Titles,

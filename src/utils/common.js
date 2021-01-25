@@ -1,4 +1,4 @@
-import {DURATION} from "./film-data";
+import {DURATION} from "../mocks/film-data";
 
 const MINUTES_IN_HOUR = 60;
 

@@ -1,4 +1,4 @@
-import {createElement} from "../utils.js";
+import Abstract from "./abstract.js";
 
 const HIDDEN_CLASS = `visually-hidden`;
 const EXTRA_CLASS = `--extra`;
@@ -11,26 +11,15 @@ const createFilmsListTemplate = ({title, isExtra = false, isHidden = false}) => 
           </section>`;
 };
 
-export default class FilmsList {
+export default class FilmsList extends Abstract {
   constructor({title, isExtra = false, isHidden = false}) {
+    super()
     this._title = title;
     this._isExtra = isExtra;
     this._isHidden = isHidden;
-    this._element = null;
   }
 
   getTemplate() {
     return createFilmsListTemplate({title: this._title, isExtra: this._isExtra, isHidden: this._isHidden});
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }
